@@ -1,37 +1,28 @@
 public class Main {
     public static void main(String[] args) {
-        int switchValue = 2;
-
-        switch (switchValue) {
-            case 1 -> System.out.println("Value was 1");
-            case 2 -> System.out.println("Value was 2");
-            case 3, 4, 5 -> System.out.println("Value was 3, 4 or 5");
-            default -> System.out.println("Value was different than 1, 2, 3, 4 or 5");
+        for(int counter = 1; counter <= 5; counter++) {
+            System.out.println(counter);
         }
 
-        String month = "XYZ";
-        System.out.println(month + " is in the " + getQuarter(month) + " quarter");
+        for(double rate  = 2.0; rate <= 5.0; rate++) {
+            double interestAmount = calculateInterest(10000.0, rate);
+            System.out.println("10,000 at " + rate + "% interest = " + interestAmount);
+
+        }
+
+        for(double i  = 7.5; i <= 10.0; i+=0.25) {
+            double interestAmount = calculateInterest(100.0, i);
+
+            if (interestAmount > 8.5) {
+                break;
+            }
+
+            System.out.println("$100 at " + i + "% interest = $" + interestAmount);
+
+        }
     }
 
-    public static String getQuarter(String month) {
-        switch (month) {
-            case "JANUARY":
-            case "FEBRUARY":
-            case "MARCH":
-                return "1st";
-            case "APRIL":
-            case "MAY":
-            case "JUNE":
-                return "2nd";
-            case "JULY":
-            case "AUGUST":
-            case "SEPTEMBER":
-                return "3rd";
-            case "OCTOBER":
-            case "NOVEMBER":
-            case "DECEMBER":
-                return "4th";
-        }
-        return "BAD";
+    public static double calculateInterest(double amount, double interestRate) {
+        return (amount * (interestRate / 100));
     }
 }
