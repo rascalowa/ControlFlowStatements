@@ -3,18 +3,10 @@ public class Main {
         int switchValue = 2;
 
         switch (switchValue) {
-            case 1:
-                System.out.println("Value was 1");
-                break;
-            case 2:
-                System.out.println("Value was 2");
-                break;
-            case 3: case 4: case 5:
-                System.out.println("Value was 3, 4 or 5");
-                break;
-            default:
-                System.out.println("Value was different than 1, 2, 3, 4 or 5");
-                break;
+            case 1 -> System.out.println("Value was 1");
+            case 2 -> System.out.println("Value was 2");
+            case 3, 4, 5 -> System.out.println("Value was 3, 4 or 5");
+            default -> System.out.println("Value was different than 1, 2, 3, 4 or 5");
         }
 
         String month = "XYZ";
