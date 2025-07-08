@@ -1,13 +1,19 @@
 public class Main {
     public static void main(String[] args) {
+        int primeNumberCounter = 0;
 
-        System.out.println("0 is " + (isPrime(0) ? "" : "NOT ") + "a prime number");
-        System.out.println("1 is " + (isPrime(1) ? "" : "NOT ") + "a prime number");
-        System.out.println("2 is " + (isPrime(2) ? "" : "NOT ") + "a prime number");
-        System.out.println("3 is " + (isPrime(3) ? "" : "NOT ") + "a prime number");
-        System.out.println("8 is " + (isPrime(8) ? "" : "NOT ") + "a prime number");
-        System.out.println("11 is " + (isPrime(11) ? "" : "NOT ") + "a prime number");
-        System.out.println("17 is " + (isPrime(17) ? "" : "NOT ") + "a prime number");
+        for (int number = 478; number <= 1000; number++) {
+            if (isPrime(number)) {
+                primeNumberCounter++;
+
+                System.out.println(number);
+
+                if (primeNumberCounter == 3) {
+                    break;
+                }
+            }
+
+        }
     }
 
     public static boolean isPrime(int wholeNumber) {
