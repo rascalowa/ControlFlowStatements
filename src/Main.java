@@ -1,34 +1,22 @@
 public class Main {
     public static void main(String[] args) {
-        int primeNumberCounter = 0;
+        int sumOfNumbersDivisibleBy3And5 = 0;
+        int divisibleBy3And5Counter = 0;
 
-        for (int number = 478; number <= 1000; number++) {
-            if (isPrime(number)) {
-                primeNumberCounter++;
+        for (int loopNumber = 1; loopNumber <= 1000; loopNumber++) {
+            if ((loopNumber % 3 == 0) && (loopNumber % 5 == 0)) {
+                System.out.println("Match - " + loopNumber);
+                sumOfNumbersDivisibleBy3And5 += loopNumber;
+                divisibleBy3And5Counter++;
 
-                System.out.println(number);
-
-                if (primeNumberCounter == 3) {
+                if (divisibleBy3And5Counter == 5) {
+                    System.out.println("Found 5 matches - exit the loop");
                     break;
                 }
             }
 
         }
-    }
 
-    public static boolean isPrime(int wholeNumber) {
-
-        if (wholeNumber <= 2) {
-            return (wholeNumber == 2);
-        }
-
-        for (int divisor = 2; divisor <= wholeNumber / 2; divisor++) {
-
-            if (wholeNumber % divisor == 0) {
-                return false;
-            }
-        }
-
-        return true;
+        System.out.println("Sum of matches: " + sumOfNumbersDivisibleBy3And5);
     }
 }
