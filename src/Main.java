@@ -1,22 +1,36 @@
 public class Main {
     public static void main(String[] args) {
-        int sumOfNumbersDivisibleBy3And5 = 0;
-        int divisibleBy3And5Counter = 0;
-
-        for (int loopNumber = 1; loopNumber <= 1000; loopNumber++) {
-            if ((loopNumber % 3 == 0) && (loopNumber % 5 == 0)) {
-                System.out.println("Match - " + loopNumber);
-                sumOfNumbersDivisibleBy3And5 += loopNumber;
-                divisibleBy3And5Counter++;
-
-                if (divisibleBy3And5Counter == 5) {
-                    System.out.println("Found 5 matches - exit the loop");
-                    break;
-                }
-            }
-
+        for (int i = 1; i <= 3; i++) {
+            System.out.println(i);
         }
 
-        System.out.println("Sum of matches: " + sumOfNumbersDivisibleBy3And5);
+        int j = 1;
+        boolean isReady = false;
+
+        while (isReady) {
+            if (j >= 3) {
+                break;
+            }
+            System.out.println(j);
+            j++;
+        }
+
+        int k = 1;
+
+        do {
+            System.out.println(k);
+            k++;
+        } while (isReady);
+
+        int number = 0;
+        while (number < 50) {
+            number += 5;
+
+            if (number % 25 == 0) {
+                continue;
+            }
+
+            System.out.print(number + "_");
+        }
     }
 }
