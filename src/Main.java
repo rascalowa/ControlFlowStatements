@@ -12,22 +12,14 @@ public class Main {
             return -1;
         }
 
-        String numberAsString = "" + number;
         int sum = 0;
 
-        if (numberAsString.length() == 1) {
-            return number;
+        while (number > 9) {
+            sum += (number % 10);
+            number = number / 10;
         }
 
-        int currentNumber = number;
-
-
-        for(int i = 0; i < numberAsString.length(); i++) {
-            int lastDigit = currentNumber % 10;
-            sum += lastDigit;
-
-            currentNumber = currentNumber / 10;
-        }
+        sum += number;
 
         return sum;
     }
