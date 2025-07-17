@@ -1,36 +1,34 @@
 public class Main {
     public static void main(String[] args) {
-        for (int i = 1; i <= 3; i++) {
-            System.out.println(i);
+        System.out.println(sumDigits(3));
+        System.out.println(sumDigits(-125));
+        System.out.println(sumDigits(125));
+        System.out.println(sumDigits(32123));
+        System.out.println(sumDigits(1234));
+    }
+
+    public static int sumDigits(int number) {
+        if (number < 0) {
+            return -1;
         }
 
-        int j = 1;
-        boolean isReady = false;
+        String numberAsString = "" + number;
+        int sum = 0;
 
-        while (isReady) {
-            if (j >= 3) {
-                break;
-            }
-            System.out.println(j);
-            j++;
+        if (numberAsString.length() == 1) {
+            return number;
         }
 
-        int k = 1;
+        int currentNumber = number;
 
-        do {
-            System.out.println(k);
-            k++;
-        } while (isReady);
 
-        int number = 0;
-        while (number < 50) {
-            number += 5;
+        for(int i = 0; i < numberAsString.length(); i++) {
+            int lastDigit = currentNumber % 10;
+            sum += lastDigit;
 
-            if (number % 25 == 0) {
-                continue;
-            }
-
-            System.out.print(number + "_");
+            currentNumber = currentNumber / 10;
         }
+
+        return sum;
     }
 }
