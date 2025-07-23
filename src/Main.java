@@ -1,26 +1,19 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println(sumDigits(3));
-        System.out.println(sumDigits(-125));
-        System.out.println(sumDigits(125));
-        System.out.println(sumDigits(32123));
-        System.out.println(sumDigits(1234));
+        System.out.println(isPalindrome(707));
+        System.out.println(isPalindrome(-1234));
+        System.out.println(isPalindrome(12121));
     }
 
-    public static int sumDigits(int number) {
-        if (number < 0) {
-            return -1;
+    public static boolean isPalindrome(int number) {
+
+        int reverse = 0;
+        int original = number;
+        while (original != 0) {
+            reverse = reverse * 10 + original % 10;
+            original /= 10;
         }
 
-        int sum = 0;
-
-        while (number > 9) {
-            sum += (number % 10);
-            number = number / 10;
-        }
-
-        sum += number;
-
-        return sum;
+        return reverse == number;
     }
 }
